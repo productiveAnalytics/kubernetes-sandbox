@@ -4,10 +4,10 @@ metadata:
   # namespace: ngnix-demo
   name: nginx-deployment
 spec:
+  replicas: 5 # tells deployment to run  pods matching the template
   selector:
     matchLabels:
       app: nginx
-  replicas: 3 # tells deployment to run  pods matching the template
   template:
     metadata:
       labels:
@@ -18,3 +18,4 @@ spec:
         image: nginx:1.17.10
         ports:
         - containerPort: 80
+          protocol: TCP
